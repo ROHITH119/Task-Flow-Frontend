@@ -8,6 +8,7 @@ import TasksByMemberChart from "../../components/charts/TasksByMemberChart";
 import api from "../../api/axios";
 import Modal from "../../components/ui/Modal";
 import toast from "react-hot-toast";
+import "../../../public/vite.svg"
 
 const AdminDashboard = () => {
   const navigate = useNavigate();

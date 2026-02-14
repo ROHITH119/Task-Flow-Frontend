@@ -144,9 +144,10 @@ const AdminTasks = () => {
   }, [filterStatus, filterMember, debouncedSearch]);
 
   return (
-    <div className="min-h-screen bg-slate-50 p-6 ">
+    // <div className="min-h-screen bg-slate-50 p-6 ">
+    <>
       <h1 className="text-2xl font-semibold mb-6">All Tasks</h1>
-      <div className="bg-white border border-slate-200 rounded-xl p-4 mb-6 flex flex-wrap gap-4 items-end shadow-sm">
+      <div className="bg-white border border-slate-200 rounded-xl p-4 mb-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 shadow-sm">
         <div className="flex flex-col">
           <label className="text-sm text-slate-600 mb-1">Search</label>
           <input
@@ -327,7 +328,8 @@ const AdminTasks = () => {
           </div>
         </form>
       </Modal>
-    </div>
+    </>
+    // </div>
   );
 };
 

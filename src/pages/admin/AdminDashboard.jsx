@@ -176,7 +176,8 @@ const AdminDashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 p-6">
+    // <div className="min-h-screen bg-slate-50 p-6">
+      <>
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-semibold">Admin Dashboard</h1>
 
@@ -268,12 +269,13 @@ const AdminDashboard = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
         <TasksByStatusChart data={statusData} />
         <TasksOverTimeChart data={timeData} />
         <TasksByMemberChart data={memberData} />
       </div>
-    </div>
+      </>
+    // </div>
   );
 };
 

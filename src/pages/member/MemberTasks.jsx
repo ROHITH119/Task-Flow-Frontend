@@ -10,16 +10,16 @@ const MemberTasks = () => {
 
   const [filterStatus, setFilterStatus] = React.useState("");
 
-   const [search, setSearch] = React.useState("");
-    const [debouncedSearch, setDebouncedSearch] = React.useState("");
+  const [search, setSearch] = React.useState("");
+  const [debouncedSearch, setDebouncedSearch] = React.useState("");
 
-  useEffect(()=> {
-    const handler = setTimeout(()=> {
-      setDebouncedSearch(search)
-    }, 500)
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedSearch(search);
+    }, 500);
 
-    return ()=> clearTimeout(handler)
-  },[search])
+    return () => clearTimeout(handler);
+  }, [search]);
 
   const fetchTasks = async (nextCursor = null) => {
     try {
@@ -52,7 +52,7 @@ const MemberTasks = () => {
   };
 
   React.useEffect(() => {
-    setCursor(null)
+    setCursor(null);
     // setTasks([])
     fetchTasks();
   }, [filterStatus, debouncedSearch]);
@@ -82,20 +82,21 @@ const MemberTasks = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    // <div className="min-h-screen bg-slate-50">
+    <>
       <div className="max-w-3xl mx-auto px-6 py-8">
         <h1 className="text-2xl font-semibold text-slate-900 mb-6">My Tasks</h1>
-        <div className="bg-white border border-slate-200 rounded-xl p-4 mb-6 flex flex-wrap gap-4 items-end shadow-sm">
+        <div className="bg-white border border-slate-200 rounded-xl p-4 mb-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 shadow-sm">
           <div className="flex flex-col">
-          <label className="text-sm text-slate-600 mb-1">Search</label>
-          <input
-            type="text"
-            placeholder="Search by title..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="input w-60"
-          ></input>
-        </div>
+            <label className="text-sm text-slate-600 mb-1">Search</label>
+            <input
+              type="text"
+              placeholder="Search by title..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="input w-60"
+            ></input>
+          </div>
           <div className="flex flex-col">
             <label className="text-sm text-slate-600 mb-1">Status</label>
             <select
@@ -113,8 +114,8 @@ const MemberTasks = () => {
           <button
             onClick={() => {
               setFilterStatus("");
-              setSearch("")
-              setDebouncedSearch("")
+              setSearch("");
+              setDebouncedSearch("");
             }}
             className="btn btn-secondary"
           >
@@ -197,7 +198,8 @@ const MemberTasks = () => {
           </div>
         )}
       </div>
-    </div>
+    </>
+    // </div>
   );
 };
 

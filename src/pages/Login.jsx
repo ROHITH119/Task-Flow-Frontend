@@ -33,11 +33,11 @@ const Login = () => {
     try {
       const res = await loginUser({ email, password });
 
-      const {user, token} = res.data.data
+      const { user, token } = res.data.data;
 
       localStorage.setItem("token", token);
       localStorage.setItem("user", JSON.stringify(user));
-      console.log(res.data.success)
+      console.log(res.data.success);
 
       if (user.role === "ADMIN") {
         navigate("/admin/dashboard");
@@ -71,6 +71,15 @@ const Login = () => {
         />
 
         {error && <p className="text-sm text-red-600 text-center">{error}</p>}
+
+        <p className="text-sm text-center">
+          <span
+            onClick={() => navigate("/forgot-password")}
+            className="text-indigo-600 cursor-pointer hover:underline"
+          >
+            Forgot password?
+          </span>
+        </p>
 
         <Button variant="primary" fullWidth disabled={loading}>
           {loading ? "Logging in.." : "Login"}

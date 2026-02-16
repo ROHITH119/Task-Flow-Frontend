@@ -8,6 +8,7 @@ import MemberTasks from "./pages/member/MemberTasks";
 import { Toaster } from "react-hot-toast";
 import AdminTasks from "./pages/admin/AdminTasks";
 import DashboardLayout from "./layouts/DashboardLayouts";
+import ForgotPassword from "./pages/ForgotPassword";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
 
         {/* <Route
           path="/admin/dashboard"

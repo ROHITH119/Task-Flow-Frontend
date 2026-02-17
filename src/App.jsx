@@ -9,6 +9,7 @@ import { Toaster } from "react-hot-toast";
 import AdminTasks from "./pages/admin/AdminTasks";
 import DashboardLayout from "./layouts/DashboardLayouts";
 import ForgotPassword from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password/:token" element={<ResetPassword />} />
 
         {/* <Route
           path="/admin/dashboard"
